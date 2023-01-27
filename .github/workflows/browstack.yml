@@ -24,9 +24,6 @@ jobs:
           dotnet-version: ${{ matrix.dotnet-version }}
       - name: Install dependencies
         run: dotnet restore
-      - name: Build with dotnet - run_broswerstack
-        continue-on-error: true
-        run: dotnet build --configuration Release --no-restore
       - name: Test
         run: dotnet test --no-restore --verbosity normal
         continue-on-error: true

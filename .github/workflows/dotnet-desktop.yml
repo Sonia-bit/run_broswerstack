@@ -23,5 +23,3 @@ jobs:
         run: dotnet build --configuration Release --no-restore
       - name: Test
         run: dotnet test --no-restore --verbosity normal
-      - name: Install dependencies
-        run: dotnet add package Selenium.WebDriver --version 4.8.0

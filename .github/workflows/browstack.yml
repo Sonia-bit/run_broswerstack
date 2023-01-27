@@ -24,7 +24,6 @@ jobs:
       - name: Install dependencies
         run: dotnet restore
       - name: Build with dotnet - run_broswerstack
-        working-directory: ./run_broswerstack
         continue-on-error: true
         run: dotnet build --configuration Release --no-restore
       - name: Test

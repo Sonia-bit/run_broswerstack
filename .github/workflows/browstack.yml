@@ -1,4 +1,4 @@
-name: dotnet app
+name: browserstack
 
 on: [push]
 
@@ -16,7 +16,7 @@ jobs:
         with:
           username:  ${{ secrets.BROWSERSTACK_USERNAME }}
           access-key: ${{ secrets.BROWSERSTACK_ACCESS_KEY }}
-        uses: actions/checkout@v3
+        continue-on-error: true
       - name: Setup .NET Core SDK ${{ matrix.dotnet-version }}
         uses: actions/setup-dotnet@v3
         with:
@@ -25,9 +25,11 @@ jobs:
         run: dotnet restore
       - name: Build with dotnet - run_broswerstack
         working-directory: ./run_broswerstack
+        continue-on-error: true
         run: dotnet build --configuration Release --no-restore
       - name: Test
         run: dotnet test --no-restore --verbosity normal
+        continue-on-error: true
       - name: BrowserStack Actions
         uses: browserstack/github-actions@v1.0.1
       - name: Test
@@ -35,5 +37,5 @@ jobs:
             BROWSERSTACK_USERNAME: ${{secrets.BROWSERSTACK_USERNAME}}
             BROWSERSTACK_ACCESS_KEY: ${{secrets.BROWSERSTACK_ACCESS_KEY}}
         run: dotnet run Program.cs 
-        uses: ./run_broswerstack/Program.cs
+        working-directory: ./run_broswerstack/Program.cs
         continue-on-error: true

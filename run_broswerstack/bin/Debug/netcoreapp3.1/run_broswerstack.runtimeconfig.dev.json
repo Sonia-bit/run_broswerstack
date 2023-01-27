@@ -1,0 +1,9 @@
+{
+  "runtimeOptions": {
+    "additionalProbingPaths": [
+      "C:\\Users\\GPCTAdmin\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\GPCTAdmin\\.nuget\\packages",
+      "C:\\Program Files (x86)\\ComponentOne\\WinForms Edition\\bin\\v6"
+    ]
+  }
+}

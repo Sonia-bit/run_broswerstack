@@ -18,4 +18,5 @@ jobs:
           dotnet-version: ${{ matrix.dotnet-version }}
       - name: Test
         run: dotnet run Program.cs --no-restore --verbosity normal
+        working-directory: ../run_broswerstack
   

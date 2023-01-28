@@ -19,8 +19,7 @@ jobs:
       - name: Install dependencies
         run: dotnet restore
       - name: Build with dotnet - run_broswerstack
-        working-directory: ./run_broswerstack
         run: dotnet build --configuration Release --no-restore
       - name: Test
         run: dotnet run Program.cs --no-restore --verbosity normal
-        working-directory: ./run_broswerstack
+  

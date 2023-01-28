@@ -16,8 +16,6 @@ jobs:
         with:
           dotnet-version: ${{ matrix.dotnet-version }}
         continue-on-error: true
-      - name: BrowserStack Actions
-        uses: browserstack/github-actions@v1.0.1
       - name: Test
         run: dotnet run Program.cs 
         working-directory: ./run_broswerstack/Program.cs

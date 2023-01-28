@@ -11,13 +11,6 @@ jobs:
         dotnet-version: ['3.0', '3.1.x' ]
 
     steps:
-      - name: 'BrowserStack Env Setup'  # Invokes the setup-env action
-        uses: browserstack/github-actions/setup-env@master
-        with:
-          username:  ${{ secrets.BROWSERSTACK_USERNAME }}
-          access-key: ${{ secrets.BROWSERSTACK_ACCESS_KEY }}
-        continue-on-error: true
-      - uses: actions/checkout@v3
       - name: Setup .NET Core SDK ${{ matrix.dotnet-version }}
         uses: actions/setup-dotnet@v3
         with:

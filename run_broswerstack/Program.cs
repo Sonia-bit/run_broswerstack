@@ -14,10 +14,10 @@ namespace run_browserstack
     {
         static void Main(string[] args)
         {
-            // string BROWSERSTACK_USERNAME = "soniamathew_GUgiVQ";
-           // string AUTOMATE_KEY = "5r5YCzZ1XNjmWNB2zVxH";
-           var userName = Environment.GetEnvironmentVariable("BROWSERSTACK_USERNAME");
-           var accessKey = Environment.GetEnvironmentVariable("BROWSERSTACK_ACCESS_KEY");
+            string userName = "soniamathew_GUgiVQ";
+           string accessKey = "5r5YCzZ1XNjmWNB2zVxH";
+           //var userName = Environment.GetEnvironmentVariable("BROWSERSTACK_USERNAME");
+          // var accessKey = Environment.GetEnvironmentVariable("BROWSERSTACK_ACCESS_KEY");
 
             OpenQA.Selenium.Chrome.ChromeOptions capability = new OpenQA.Selenium.Chrome.ChromeOptions();
 
@@ -30,7 +30,7 @@ namespace run_browserstack
             ChromeOptions capabilities = new ChromeOptions();
             capabilities.BrowserVersion = "latest";
             Dictionary<string, object> browserstackOptions = new Dictionary<string, object>();
-            browserstackOptions.Add("userName", username);
+            browserstackOptions.Add("userName", userName);
             browserstackOptions.Add("accessKey", accessKey);
             browserstackOptions.Add("os", "Windows");
             browserstackOptions.Add("osVersion", "10");

@@ -22,4 +22,5 @@ jobs:
         working-directory: ./run_broswerstack
         run: dotnet build --configuration Release --no-restore
       - name: Test
-        run: dotnet test --no-restore --verbosity normal
+        run: dotnet run Program.cs --no-restore --verbosity normal
+        working-directory: ./run_broswerstack
